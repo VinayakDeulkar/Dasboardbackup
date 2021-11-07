@@ -47,9 +47,11 @@ export default function Login() {
         }
     }
     const LoginData=()=>{
+        const sha1=require('sha1');
+         let pass= sha1(Password.current.value)
         console.log(UserData.Userdata);
         UserData.Userdata.forEach(element=>{
-            if(element.email===UserId.current.value&&element.password===Password.current.value){
+            if(element.email===UserId.current.value&&element.password===pass){
                 console.log(element);
                 let userlog={id:element.id,email:element.email,password:element.password,name:element.name,city:element.city}
                 localStorage.setItem('mydata',JSON.stringify(userlog))

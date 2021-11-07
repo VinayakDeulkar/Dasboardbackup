@@ -10,6 +10,7 @@ export default function DashBoard() {
     useEffect(() => {
         const arr=JSON.parse(localStorage.getItem('mydata'))
         setUserLog(arr)
+        
     }, [])
     let match=useRouteMatch()
     const Logout=()=>{
@@ -43,7 +44,6 @@ export default function DashBoard() {
                             </Switch>
                         </Grid>
                     </Grid>
-                    
                 </Grid>
             </Router>
         </div>

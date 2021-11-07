@@ -1,56 +1,18 @@
 {
   "Data": [
     {
-      "id": 1,
       "email": "vinayakdeulkar@gmail.com",
-      "password": "Vinayak@123",
-      "name": "Vinayak",
-      "city": "Pune"
-    },
-    {
-      "id": 2,
-      "email": "sumitjoshi@gmail.com",
-      "password": "Sumit@123",
-      "name": "Sumit",
-      "city": "mumbai"
-    },
-    {
-      "id": 3,
-      "email": "kirangore@gmail.com",
-      "password": "kiru@123",
-      "name": "kiran",
-      "city": "pune"
-    },
-    {
-      "id": 4,
-      "email": "chaitanyadeshpande@gmail.com",
-      "password": "Chaitu@123",
-      "name": "Chaitu",
-      "city": "noida"
-    },
-    {
-      "id": 5,
-      "email": "manojhoji@gmail.com",
-      "password": "Manu@123",
-      "name": "Manoj",
-      "city": "pune"
+      "name": "Vinu",
+      "password": "9e60c41dddaf622339c24e44b8d4e3946dd1d272",
+      "city": "pune",
+      "id": 1
     }
   ],
   "product": [
     {
-      "id": "3",
-      "pname": "Aa",
-      "price": "25000"
-    },
-    {
-      "id": "1",
-      "pname": "B",
-      "price": "2000"
-    },
-    {
-      "id": 0.2816746813204678,
-      "pname": "appllle",
-      "price": "5000"
+      "id": 0.30862415795964315,
+      "pname": "apple",
+      "price": "50"
     }
   ]
 }

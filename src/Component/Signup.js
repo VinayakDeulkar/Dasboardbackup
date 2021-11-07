@@ -1,7 +1,7 @@
-import React,{useEffect,useState,useRef} from 'react'
+import React,{useState,useRef} from 'react'
 import { Button, Card,  CardContent,  FormControl, FormGroup, Grid, TextField, Typography } from '@mui/material'
 import axios from 'axios'
-import {BrowserRouter as Router,NavLink,useHistory } from 'react-router-dom'
+import {BrowserRouter as Router,useHistory } from 'react-router-dom'
 import Captcha from './Captcha'
 const client=axios.create({
     baseURL:"http://localhost:3001/data"
@@ -21,6 +21,7 @@ export default function Signup() {
     const Login=()=>{
         history.push("/")
     }
+    
     const handler=(event)=>{
         const name=event.target.name;
         switch (name) {
@@ -44,6 +45,7 @@ export default function Signup() {
                     break;
             case 'password':
                 const ep=regForPassword.test(Password.current.value)?'':"Enter Valid password pattern"
+                
                 setError({
                     errpass:ep
                 })
@@ -59,8 +61,10 @@ export default function Signup() {
         }
     }
     const Submit=async()=>{
+        const sha1=require('sha1');
+         let pass= sha1(Password.current.value)
         if(UserId.current.value!=undefined && Password.current.value!=undefined && City.current.value!=undefined && userName.current.value!=undefined ){
-            let formData={id:Math.random,email:UserId.current.value,name:userName.current.value,password:Password.current.value,city:City.current.value}
+            let formData={id:Math.random,email:UserId.current.value,name:userName.current.value,password:pass,city:City.current.value}
             client.post("/",formData)
             history.push("/")
         }

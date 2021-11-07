@@ -6,14 +6,16 @@ import Signup from './Signup';
 
 export default function Navigation() {
     const history=useHistory();
-    const [IsLogin, setIsLogin] = useState(true)
+    // const [IsLogin, setIsLogin] = useState(true)
     useEffect(() => {
         const arr=JSON.parse(localStorage.getItem('mydata'))
-        if(arr!=undefined){
-            setIsLogin(false)
+        if(arr==undefined){
+            history.push("/")
+            // setIsLogin(false)
         }
         else{
-            setIsLogin(true)
+            history.push("/DashBorad")
+            // setIsLogin(true)
         }
     }, [])
     return (
@@ -24,7 +26,7 @@ export default function Navigation() {
                     <Route path="/DashBorad" exact component={DashBoard}/>
                     <Route path="/Register" exact component={Signup}/>
                 </Switch>
-                {IsLogin==true?history.push("/"):history.push("/DashBorad")}
+                {/* {IsLogin==true?history.push("/"):history.push("/DashBorad")} */}
             </Router>
         </div>
     )
