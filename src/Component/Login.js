@@ -47,12 +47,16 @@ export default function Login() {
         }
     }
     const LoginData=()=>{
-        const sha1=require('sha1');
-         let pass= sha1(Password.current.value)
-        console.log(UserData.Userdata);
+        const bcrypt=require('bcryptjs')
+        const pass=bcrypt.hashSync(Password.current.value,bcrypt.genSaltSync())
+        console.log(pass);
+        const fromPassword=Password.current.value
         UserData.Userdata.forEach(element=>{
-            if(element.email===UserId.current.value&&element.password===pass){
-                console.log(element);
+            const comparepass=bcrypt.compareSync(fromPassword,element.password)
+            console.log(comparepass);
+            console.log(element.password);
+            if(element.email===UserId.current.value&& comparepass==true){
+                
                 let userlog={id:element.id,email:element.email,password:element.password,name:element.name,city:element.city}
                 localStorage.setItem('mydata',JSON.stringify(userlog))
                 history.push("/DashBorad")

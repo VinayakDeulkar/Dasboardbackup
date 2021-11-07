@@ -1,11 +1,25 @@
 {
   "Data": [
     {
+      "id": 1,
       "email": "vinayakdeulkar@gmail.com",
-      "name": "Vinu",
-      "password": "9e60c41dddaf622339c24e44b8d4e3946dd1d272",
+      "password": "$2a$10$W5T5LWQvDSYvzg6bXk8AwObpKQ9gexXEO8YKBOCiFLAv4xslQZ/Fy",
+      "name": "vinu",
+      "city": "pune"
+    },
+    {
+      "email": "sumit@gmail.com",
+      "name": "sumit",
+      "password": "$2a$10$U3GQErmbQbrtTl3MTczYUOawDNiQWt09tGxqyA4Mv.CDbnIA8MGby",
       "city": "pune",
-      "id": 1
+      "id": 2
+    },
+    {
+      "id": 0.973109996127079,
+      "email": "kiran@gmail.com",
+      "name": "kiran",
+      "password": "$2a$10$BEUkRduLoHRvKVDg0fzknuRzM.xTJi470Sn8VOKnCfaPW0lB0t7k2",
+      "city": "pune"
     }
   ],
   "product": [

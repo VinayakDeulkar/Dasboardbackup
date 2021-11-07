@@ -61,11 +61,13 @@ export default function Signup() {
         }
     }
     const Submit=async()=>{
-        const sha1=require('sha1');
-         let pass= sha1(Password.current.value)
+        const bcrypt=require('bcryptjs')
+        const pass=bcrypt.hashSync(Password.current.value,bcrypt.genSaltSync())
+        console.log(pass);
         if(UserId.current.value!=undefined && Password.current.value!=undefined && City.current.value!=undefined && userName.current.value!=undefined ){
-            let formData={id:Math.random,email:UserId.current.value,name:userName.current.value,password:pass,city:City.current.value}
-            client.post("/",formData)
+            let formData={id:Math.random(),email:UserId.current.value,name:userName.current.value,password:pass,city:City.current.value}
+            console.log(formData);
+            client.post('/',formData)
             history.push("/")
         }
     }

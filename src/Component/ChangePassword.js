@@ -38,15 +38,23 @@ export default function ChangePassword() {
     }
     const submit=(event)=>{
         event.preventDefault();
+        const bcrypt=require('bcryptjs')
+        const pass=bcrypt.hashSync(newpassword.current.value,bcrypt.genSaltSync())
         let arr=JSON.parse(localStorage.getItem('mydata'))
-        if(arr.password===password.current.value){
+        const fromPassword=password.current.value
+        const comparepass=bcrypt.compareSync(fromPassword,arr.password)
+        console.log(comparepass);
+        if(comparepass==true){
             if(newpassword.current.value===confirmpassword.current.value){
-                let formData={...arr,password:newpassword.current.value}
+                let formData={...arr,password:pass}
                 console.log(formData);
                 client.put(`/${arr.id}`,formData)
                 localStorage.clear()
                 history.push('/')
             }
+        }
+        else{
+            alert("Please enter correct current password")
         }
     }
     return (
