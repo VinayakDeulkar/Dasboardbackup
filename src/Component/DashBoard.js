@@ -1,4 +1,5 @@
-import { AppBar, Button, Grid,Toolbar, Typography } from '@mui/material'
+import { AppBar, Button, Drawer, Grid,Toolbar, Typography } from '@mui/material'
+import { Box } from '@mui/system'
 import React,{useEffect,useState} from 'react'
 import {BrowserRouter as Router, NavLink,useRouteMatch,Route,Switch,useHistory } from 'react-router-dom'
 import AddCategory from './AddCategory'
@@ -17,6 +18,7 @@ export default function DashBoard() {
         localStorage.clear();
         history.push('/');
     }
+    const drawerWidth = 240;
     return (
         <div>
             <Router>
@@ -33,8 +35,10 @@ export default function DashBoard() {
                     </Grid>
                     <Grid container>
                         <Grid item lg={2}  >
+                            
                             <NavLink to={`${match.url}`} className="textCate"><Typography variant="body1" >Category</Typography></NavLink>
                             <NavLink to={`${match.url}/AddCategory`} className="textCate"><Typography variant="body1" >Add Category</Typography></NavLink>
+                           
                         </Grid> 
                         <Grid item lg={10} >
                             <Switch>

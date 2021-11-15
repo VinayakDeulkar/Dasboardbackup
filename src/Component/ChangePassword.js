@@ -4,7 +4,7 @@ import {BrowserRouter as Redirect, useHistory } from 'react-router-dom';
 import { Grid,TextField,Button,FormGroup,FormControl, Card } from '@mui/material';
 const regForPassword=RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/);
 const client=axios.create({
-    baseURL:"http://localhost:3001/data"
+    baseURL:"http://localhost:3001/Data"
 })
 export default function ChangePassword() {
     const [pass, setpass] = useState({Changepass:[]})

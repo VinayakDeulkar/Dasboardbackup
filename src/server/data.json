@@ -20,6 +20,13 @@
       "name": "kiran",
       "password": "$2a$10$BEUkRduLoHRvKVDg0fzknuRzM.xTJi470Sn8VOKnCfaPW0lB0t7k2",
       "city": "pune"
+    },
+    {
+      "id": 0.19228501532669995,
+      "email": "manoj@gmail.com",
+      "name": "manoj",
+      "password": "$2a$10$syVOfA2ZvQUNXNAmLvoFVeynl.nbtUSLTYVCvmIJVsYo97OuAT652",
+      "city": "pune"
     }
   ],
   "product": [

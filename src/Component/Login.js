@@ -3,7 +3,7 @@ import React,{useEffect,useState,useRef} from 'react'
 import axios from 'axios'
 import {BrowserRouter as Router,NavLink,useHistory } from 'react-router-dom'
 const client=axios.create({
-    baseURL:"http://localhost:3001/data"
+    baseURL:"http://localhost:3001/Data"
 })
 export default function Login() {
     const [UserData, setUserData] = useState({Userdata:[]})

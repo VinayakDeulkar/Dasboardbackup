@@ -3,8 +3,9 @@ import { Button, Card,  CardContent,  FormControl, FormGroup, Grid, TextField, T
 import axios from 'axios'
 import {BrowserRouter as Router,useHistory } from 'react-router-dom'
 import Captcha from './Captcha'
+const bcrypt=require('bcryptjs')
 const client=axios.create({
-    baseURL:"http://localhost:3001/data"
+    baseURL:"http://localhost:3001/Data"
 })
 export default function Signup() {
     const [Error, setError] = useState({erruser:'',errpass:'',errname:'',errcpass:'',errcity:''}) 
@@ -61,7 +62,7 @@ export default function Signup() {
         }
     }
     const Submit=async()=>{
-        const bcrypt=require('bcryptjs')
+        
         const pass=bcrypt.hashSync(Password.current.value,bcrypt.genSaltSync())
         console.log(pass);
         if(UserId.current.value!=undefined && Password.current.value!=undefined && City.current.value!=undefined && userName.current.value!=undefined ){
